@@ -98,6 +98,13 @@ p {
   padding: 80px 0;
 }
 
+/* Profile picture */
+.profile-pic {
+  width: 30vw;
+  max-width: 30vw;
+  height: auto;
+}
+
 /* Project Cards */
 .projects {
   padding: 40px 0;
@@ -155,11 +162,11 @@ p {
 /* Start of CSS for dev icons content scrolling */
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 :root {
-  --marquee-width: 100vw;
+  --marquee-width: 30vw;
   --marquee-height: 5vh;
   /* --marquee-elements: 12; */ /* defined with JavaScript */
   /* --marquee-elements-displayed: previousely 5 */
-  --marquee-elements-displayed: 10;
+  --marquee-elements-displayed: 5;
   --marquee-element-width: calc(
     var(--marquee-width) / var(--marquee-elements-displayed)
   );
