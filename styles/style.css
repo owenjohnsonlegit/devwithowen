@@ -1,267 +1,45 @@
-/* Reset default browser styles */
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: black;
+  color: blue;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
-main {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-/* Navbar styles */
-header {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-}
-
-/* .logo {
-  /* Add styles for your logo here */
-/* } */
-
-.nav-links {
-  list-style: none;
-  float: right;
-}
-
-.nav-links li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-.nav-links li:first-child {
-  margin-left: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #00ffff;
-}
-
-/* Typography styles */
-h1,
-h2,
-h3 {
-  font-family: "Exo 2", sans-serif;
-  font-weight: bold;
-  color: #ff00ff;
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-h3 {
-  font-size: 24px;
-}
-
-p {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-/* Typography */
-h1 {
-  font-size: 40px;
-  color: #ff00ff;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-/* Header */
-.hero {
-  text-align: center;
-  padding: 80px 0;
-}
-
-/* Profile picture */
-.profile-pic {
-  width: 30vw;
-  max-width: 30vw;
-  height: auto;
-}
-
-/* Project Cards */
-.projects {
-  padding: 40px 0;
-}
-
-.project-carousel {
+section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  overflow: hidden;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
 }
 
-/* Additional styling for the project card */
-.project-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 20px;
-  color: #ffffff;
-  /* Your custom styles for project cards */
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s;
 }
 
-.project-card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
+.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.project-card h3 {
-  font-size: 24px;
-  color: #00ffff;
-  margin-bottom: 10px;
-}
-
-.project-card p {
-  font-size: 16px;
-  color: #ffffff;
-}
-
-.project-card a {
-  display: inline-block;
-  background-color: #00ffff;
-  color: #000000;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.project-card a:hover {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-/* Start of CSS for dev icons content scrolling */
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-:root {
-  --marquee-width: 30vw;
-  --marquee-height: 5vh;
-  /* --marquee-elements: 12; */ /* defined with JavaScript */
-  /* --marquee-elements-displayed: previousely 5 */
-  --marquee-elements-displayed: 5;
-  --marquee-element-width: calc(
-    var(--marquee-width) / var(--marquee-elements-displayed)
-  );
-  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
-}
-
-.marquee {
-  width: var(--marquee-width);
-  height: var(--marquee-height);
-  background-color: #111;
-  color: #eee;
-  overflow: hidden;
-  position: relative;
-}
-.marquee:before,
-.marquee:after {
-  position: absolute;
-  top: 0;
-  width: 10rem;
-  height: 100%;
-  content: "";
-  z-index: 1;
-}
-.marquee:before {
-  left: 0;
-  background: linear-gradient(to right, #111 0%, transparent 100%);
-}
-.marquee:after {
-  right: 0;
-  background: linear-gradient(to left, #111 0%, transparent 100%);
-}
-.marquee-content {
-  list-style: none;
-  height: 100%;
+.logos {
   display: flex;
-  animation: scrolling var(--marquee-animation-duration) linear infinite;
-}
-/* .marquee-content:hover {
-  animation-play-state: paused;
-} */
-@keyframes scrolling {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(
-      calc(-1 * var(--marquee-element-width) * var(--marquee-elements))
-    );
-  }
-}
-.marquee-content li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* text-align: center; */
-  flex-shrink: 0;
-  width: var(--marquee-element-width);
-  max-height: 100%;
-  font-size: calc(var(--marquee-height) * 3 / 4); /* 5rem; */
-  white-space: nowrap;
 }
 
-.marquee-content li img {
-  width: 100%;
-  /* height: 100%; */
-  border: 2px solid #eee;
+.logo:nth-child(2) {
+  transition-delay: 200ms;
 }
 
-@media (max-width: 600px) {
-  html {
-    font-size: 12px;
-  }
-  :root {
-    --marquee-width: 100vw;
-    --marquee-height: 16vh;
-    --marquee-elements-displayed: 3;
-  }
-  .marquee:before,
-  .marquee:after {
-    width: 5rem;
-  }
+.logo:nth-child(3) {
+  transition-delay: 400ms;
 }
-/* End of  CSS for dev icons content scrolling */
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-size: 14px;
+.logo:nth-child(4) {
+  transition-delay: 600ms;
+}
+
+img {
+  width: 250px;
 }

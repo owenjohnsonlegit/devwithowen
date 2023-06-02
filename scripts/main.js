@@ -1,13 +1,13 @@
-// Start of JS for dev icons content scrolling
-const root = document.documentElement;
-const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
-  "--marquee-elements-displayed"
-);
-const marqueeContent = document.querySelector("ul.marquee-content");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
 
-root.style.setProperty("--marquee-elements", marqueeContent.children.length);
-
-for (let i = 0; i < marqueeElementsDisplayed; i++) {
-  marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
-}
-// End of JS for dev icons content scrolling
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));
