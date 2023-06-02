@@ -13,17 +13,6 @@ section {
   min-height: 100vh;
 }
 
-.hidden {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: all 1s;
-}
-
-.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
 .logos {
   display: flex;
 }
@@ -42,4 +31,23 @@ section {
 
 img {
   width: 250px;
+}
+
+/* Animation left to right */
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
 }
